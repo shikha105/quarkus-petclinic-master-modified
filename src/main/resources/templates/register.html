@@ -1,0 +1,54 @@
+{#include baseLogin}
+    {#body}
+
+        <h2>{msg:register}</h2>
+       <h3> {message}</h3>
+        <form class="form-horizontal" id="login-form" method="post">
+        <div class="form-group has-feedback">
+
+            <div class="form-group {#if errors.containsKey('email') != null} has-error {/if}">
+                <label class="col-sm-2 control-label">{msg:email}</label>
+                <div class="col-sm-10">
+                    <div>
+                        <input class="form-control" type="email" id="email" name="email"/>
+
+                    </div>
+                    <span class="glyphicon {#if errors.containsKey('email') != null} glyphicon-remove {#else} glyphicon-ok {/if} form-control-feedback"
+                          aria-hidden="true"></span>
+                </div>
+            </div>
+
+            <div class="form-group {#if errors.containsKey('password') != null} has-error {/if}">
+                <label class="col-sm-2 control-label">{msg:password}</label>
+                <div class="col-sm-10">
+                    <div>
+                        <input class="form-control" type="password" id="pwd" name="password"/>
+
+                    </div>
+                    <span class="glyphicon {#if errors.containsKey('password') != null} glyphicon-remove {#else} glyphicon-ok {/if} form-control-feedback"
+                          aria-hidden="true"></span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+        <div class="row">
+        <div class="col">
+        <button class="btn btn-primary" type="submit">
+
+            {msg:register}
+        </button>
+        </div>
+
+
+        </div>
+
+        </div>
+        </form>
+
+        <div>
+         <h6 class="mt-5 mb-0">Already have an account? login here</h6>
+        <a href="/" class="btn btn-primary btn-sm"> {msg:login} </a>
+        </div>
+
+    {/body}
+{/include}
